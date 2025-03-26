@@ -2,6 +2,8 @@ import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
+// 导入react-devtools
+import { installExtension, REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer'
 
 function createWindow() {
   // Create the browser window.
@@ -39,6 +41,10 @@ function createWindow() {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
+  // 安装开发者工具
+  installExtension(REACT_DEVELOPER_TOOLS)
+    .then((ext) => console.log(`Added Extension:  ${ext.name}`))
+    .catch((err) => console.log('An error occurred: ', err))
   // Set app user model id for windows
   electronApp.setAppUserModelId('com.electron')
 

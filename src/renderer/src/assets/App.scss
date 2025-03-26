@@ -1,0 +1,25 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: pink;
+
+  .toolbar-container {
+    height: 100px;
+  }
+
+  .main-container {
+    background-color: greenyellow;
+    flex: 1;
+    display: flex;
+
+    .sidebar-container {
+      width: 200px;
+      background-color: red;
+    }
+    .canvas-container {
+      flex: 1;
+      background-color: white;
+    }
+  }
+}
