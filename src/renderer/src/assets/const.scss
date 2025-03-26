@@ -4,7 +4,23 @@ $border-color: #E7E8E9;
 $hover-color: #F0F0F0;
 $scroll-color: #BDBFC1;
 
-// 低阴影混合
+// 低阴影（z-index: 1-2）
 @mixin low-shadow {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.03),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+// 中阴影（z-index: 3-5） 
+@mixin mid-shadow {
+  box-shadow: 
+    0 3px 6px rgba(0, 0, 0, 0.08),
+    0 3px 6px rgba(0, 0, 0, 0.12);
+}
+
+// 高阴影（z-index: 6-8）
+@mixin high-shadow {
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.12),
+    0 6px 6px rgba(0, 0, 0, 0.16);
 }

@@ -2,6 +2,7 @@
 .toolbar {
   height: 100%;
   display: flex;
+  border-bottom: 1px solid $border-color;
   .title {
     width: 200px;
     display: flex;
@@ -20,7 +21,7 @@
     align-items: center;
     background-color: #fff;
     border-radius: 20px;
-    @include low-shadow;
+    @include mid-shadow;
     .iconfont {
       position: relative;
       padding: 10px;
