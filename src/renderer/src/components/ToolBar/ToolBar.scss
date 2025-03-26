@@ -1,7 +1,6 @@
 // @import '@renderer/assets/main.scss';
 .toolbar {
   height: 100%;
-  background-color: skyblue;
   display: flex;
   .title {
     width: 200px;
@@ -14,7 +13,44 @@
     font-weight: bold;
   }
   .tools {
+    margin: 5px 20px;
     flex: 1;
-    background-color: hotpink;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    @include low-shadow;
+    .iconfont {
+      position: relative;
+      padding: 10px;
+      font-size: 50px;
+      border-radius: 10px;
+      color: $main-color;
+      &::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        top: 100%; // 改为从顶部向下延伸
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 8px; // 增加间距防止贴边
+        padding: 4px 8px;
+        background: white;
+        color: #1E6FFF;
+        border-radius: 4px;
+        font-size: 12px;
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity 0.2s;
+        pointer-events: none;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // 可选阴影效果
+      }
+      &:hover::after {
+        opacity: 1;
+      }
+      &:hover {
+        background-color: $hover-color;
+      }
+    }
   }
 }

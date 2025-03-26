@@ -4,7 +4,14 @@ export default function ToolBar() {
   return (
     <div className="toolbar">
       <div className="title">{title}</div>
-      <div className="tools">工具</div>
+      <div className="tools">
+        <i data-tooltip="文本" className="iconfont icon-huabigongju-wenben"></i>
+        <i data-tooltip="涂鸦" className="iconfont icon-huabigongju-tuya"></i>
+        <i data-tooltip="矩形" className="iconfont icon-huabigongju-juxing"></i>
+        <i data-tooltip="圆" className="iconfont icon-huabigongju-tuoyuan"></i>
+        <i data-tooltip="擦除" className="iconfont icon-huabigongju-cachu"></i>
+        <i data-tooltip="图片" className="iconfont icon-charutupian"></i>
+      </div>
     </div>
   )
 }

@@ -1,1 +1,10 @@
 $main-color: #0071FF;
+$bgc-color: #F3F5F7;
+$border-color: #E7E8E9;
+$hover-color: #F0F0F0;
+$scroll-color: #BDBFC1;
+
+// 低阴影混合
+@mixin low-shadow {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}

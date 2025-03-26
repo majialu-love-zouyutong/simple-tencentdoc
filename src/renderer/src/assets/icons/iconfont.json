@@ -1,0 +1,51 @@
+{
+  "id": "4867769",
+  "name": "腾讯文档简易版",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "腾讯文档",
+  "glyphs": [
+    {
+      "icon_id": "10545473",
+      "name": "画笔工具-擦除",
+      "font_class": "huabigongju-cachu",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "15726730",
+      "name": "插入图片",
+      "font_class": "charutupian",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "10207957",
+      "name": "画笔工具-文本",
+      "font_class": "huabigongju-wenben",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "10207958",
+      "name": "画笔工具-矩形",
+      "font_class": "huabigongju-juxing",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "10207960",
+      "name": "画笔工具-椭圆",
+      "font_class": "huabigongju-tuoyuan",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "10207984",
+      "name": "画笔工具-涂鸦",
+      "font_class": "huabigongju-tuya",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    }
+  ]
+}
