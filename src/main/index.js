@@ -1,10 +1,10 @@
-import { app, shell, BrowserWindow, ipcMain } from 'electron'
+import { app, shell, BrowserWindow, ipcMain, dialog } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 // 导入react-devtools
 import { installExtension, REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer'
-
+import fs from 'fs'
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
@@ -15,7 +15,9 @@ function createWindow() {
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
-      sandbox: false
+      sandbox: false,
+      webSecurity: false,
+      allowRunningInsecureContent: true
     }
   })
 
@@ -57,6 +59,24 @@ app.whenReady().then(() => {
 
   // IPC test
   ipcMain.on('ping', () => console.log('pong'))
+
+  // 读取本地图片
+  ipcMain.handle('open-image-dialog', async () => {
+    try {
+      const { canceled, filePaths } = await dialog.showOpenDialog({
+        properties: ['openFile'],
+        filters: [{ name: 'Images', extensions: ['jpg', 'png', 'jpeg', 'gif'] }]
+      })
+      if (canceled || !filePaths.length) return null
+      // 转换为base64
+      // 读取图片为 Base64
+      const fileBuffer = fs.readFileSync(filePaths[0])
+      return `data:image/png;base64,${fileBuffer.toString('base64')}`
+    } catch (error) {
+      console.log('读取图片失败', error)
+      return null
+    }
+  })
 
   createWindow()
 
