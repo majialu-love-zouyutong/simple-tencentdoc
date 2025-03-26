@@ -41,7 +41,6 @@ export default function ToolBar({ activeTool, setActiveTool, setImageUrl }) {
   const handleSelectImage = async () => {
     const result = await window.api.openImageDialog()
     if (result) {
-      console.log(result)
       setImageUrl(result)
     }
   }

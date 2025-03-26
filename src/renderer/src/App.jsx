@@ -19,7 +19,7 @@ export default function App() {
           <SideBar />
         </div>
         <div className="canvas-container">
-          <Canvas imageUrl={imageUrl} />
+          <Canvas imageUrl={imageUrl} activeTool={activeTool} />
         </div>
       </div>
     </div>
